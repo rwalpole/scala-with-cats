@@ -1,5 +1,14 @@
 import cats.Functor
 
+/*
+Chapter 3: Functors
+Informally a functor is anything with a map method for example Option, List and Either
+We should think of map not as an iteration pattern but as a way of sequencing computations while ignoring some complications of the data type
+For example:
+- Option can be None
+- Either can be an error
+- List may be empty
+ */
 sealed trait Tree[+A]
 final case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
 final case class Leaf[A](value: A) extends Tree[A]
